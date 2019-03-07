@@ -28,7 +28,7 @@ go run main.go -listen-port 9000 rate-limit=10 -redis-url localhost:6378
 
 ### How to Test
 
-The easiest way is using ![Postman Collection Run] (https://learning.getpostman.com/docs/postman/collection_runs/starting_a_collection_run/) to make flood requests.
+The easiest way is using [Postman Collection Run] (https://learning.getpostman.com/docs/postman/collection_runs/starting_a_collection_run/) to make flood requests.
 
 ```
 curl -X GET \
@@ -41,7 +41,7 @@ curl -X GET \
   -F title=RateLimiter
 ```
 
-## Built With
+### Built With
 
 * [gin](https://github.com/gin-gonic/gin) - HTTP web framework
 * [go-redis](https://github.com/go-redis/redis) - Redis client for Golang

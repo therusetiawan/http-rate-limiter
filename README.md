@@ -15,7 +15,7 @@ DDoS attack.
 
 1. Install all project dependencies
 ```
-make install-dep
+dep ensure -v
 ```
 2. Start docker service using docker-compose
 ```

@@ -37,9 +37,8 @@ func rateLimitBasedOnToken(ctx *gin.Context, rateLimit int64, userToken string) 
 		return
 	} else {
 		if exist := redis.Exists(userToken); exist == 0 {
-			// TODO : must be run in transaction mode
-			redis.RPush(userToken, userToken)
-			redis.ExpireAt(userToken, expTime)
+			// execute in transaction mode
+			redis.RPushAndExpireAt(userToken, userToken, expTime)
 		} else {
 			// insert if only key already exist
 			// handling race condition using RPushX
